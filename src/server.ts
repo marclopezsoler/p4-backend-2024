@@ -4,6 +4,7 @@ import morgan from "morgan";
 import productsRouter from "./products";
 import ordersRouter from "./orders";
 import { defaultErrorHandler } from "./errors";
+import sellersRouter from "./sellers";
 
 const app = express();
 
@@ -12,8 +13,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/products", productsRouter);
-
 app.use("/orders", ordersRouter);
+app.use("/sellers", sellersRouter);
 
 app.use(defaultErrorHandler);
 

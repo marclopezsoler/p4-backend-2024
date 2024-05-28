@@ -24,7 +24,7 @@ ordersRouter.get(
       orderBy: { id: "asc" },
     });
     send(res).ok({
-      msg: `Total products: ${totalOrders}`,
+      msg: `Total orders: ${totalOrders}`,
       orders,
     });
   })
