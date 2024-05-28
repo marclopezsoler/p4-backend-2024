@@ -5,6 +5,7 @@ import productsRouter from "./products";
 import ordersRouter from "./orders";
 import { defaultErrorHandler } from "./errors";
 import sellersRouter from "./sellers";
+import clientsRouter from "./clients";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/products", productsRouter);
 app.use("/orders", ordersRouter);
 app.use("/sellers", sellersRouter);
+app.use("/clients", clientsRouter);
 
 app.use(defaultErrorHandler);
 

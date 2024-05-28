@@ -4,7 +4,7 @@ import { catchErrors } from "./errors";
 import { prisma } from "./db";
 import { send } from "./response";
 
-const sellersRouter = Router();
+const sellersRoute = Router();
 const idParamsSchema = z.object({ id: z.coerce.number() });
 
 const sellersBodySchema = z.object({
@@ -14,7 +14,7 @@ const sellersBodySchema = z.object({
 
 const partialSellersBodySchema = sellersBodySchema.partial();
 
-sellersRouter.get(
+sellersRoute.get(
   "/",
   catchErrors(async (req, res) => {
     const totalSellers = await prisma.seller.count();
@@ -28,7 +28,7 @@ sellersRouter.get(
   })
 );
 
-sellersRouter.get(
+sellersRoute.get(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
@@ -39,7 +39,7 @@ sellersRouter.get(
   })
 );
 
-sellersRouter.post(
+sellersRoute.post(
   "/",
   catchErrors(async (req, res) => {
     const data = sellersBodySchema.parse(req.body);
@@ -51,7 +51,7 @@ sellersRouter.post(
   })
 );
 
-sellersRouter.put(
+sellersRoute.put(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
@@ -66,7 +66,7 @@ sellersRouter.put(
   })
 );
 
-sellersRouter.delete(
+sellersRoute.delete(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
@@ -91,4 +91,4 @@ sellersRouter.delete(
   })
 );
 
-export default sellersRouter;
+export default sellersRoute;
