@@ -19,12 +19,23 @@ productsRouter.get(
   catchErrors(async (req, res) => {
     const totalProducts = await prisma.product.count();
     const products = await prisma.product.findMany({
-      orderBy: { name: "asc" },
+      orderBy: { id: "asc" },
     });
     send(res).ok({
       msg: `Total products: ${totalProducts}`,
       products,
     });
+  })
+);
+
+productsRouter.get(
+  "/:id",
+  catchErrors(async (req, res) => {
+    const { id: productId } = idParamsSchema.parse(req.params);
+    const product = await prisma.product.findUniqueOrThrow({
+      where: { id: productId },
+    });
+    send(res).ok({ product });
   })
 );
 

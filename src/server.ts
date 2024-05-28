@@ -9,7 +9,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/", productsRouter);
+app.use("/products", productsRouter);
 
 app.get("/", async (req, res) => {
   res.status(200).json({ ok: "true", message: "hello" });
