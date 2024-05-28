@@ -1,12 +1,15 @@
 import cors from "cors";
 import express from "express";
 import morgan from "morgan";
+import productsRouter from "./products";
 
 const app = express();
 
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use("/", productsRouter);
 
 app.get("/", async (req, res) => {
   res.status(200).json({ ok: "true", message: "hello" });
