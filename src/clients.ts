@@ -6,6 +6,7 @@ import { send } from "./response";
 
 const clientsRouter = Router();
 const idParamsSchema = z.object({ id: z.coerce.number() });
+const nameParamsSchema = z.object({ name: z.coerce.string() });
 
 const clientsBodySchema = z.object({
   name: z.string().min(3).max(50),
@@ -29,11 +30,26 @@ clientsRouter.get(
 );
 
 clientsRouter.get(
-  "/:id",
+  "/?id=:id",
   catchErrors(async (req, res) => {
     const { id: clientId } = idParamsSchema.parse(req.params);
     const client = await prisma.client.findUniqueOrThrow({
       where: { id: clientId },
+    });
+    send(res).ok({ client });
+  })
+);
+
+clientsRouter.get(
+  "/?name=:name",
+  catchErrors(async (req, res) => {
+    const { name: clientName } = nameParamsSchema.parse(req.params);
+    const client = await prisma.client.findMany({
+      where: {
+        name: {
+          contains: clientName,
+        },
+      },
     });
     send(res).ok({ client });
   })

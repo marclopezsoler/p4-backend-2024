@@ -6,6 +6,7 @@ import { send } from "./response";
 
 const sellersRoute = Router();
 const idParamsSchema = z.object({ id: z.coerce.number() });
+const nameParamsSchema = z.object({ name: z.coerce.string() });
 
 const sellersBodySchema = z.object({
   name: z.string().min(3).max(50),
@@ -29,11 +30,27 @@ sellersRoute.get(
 );
 
 sellersRoute.get(
-  "/:id",
+  "/?id=:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
     const seller = await prisma.seller.findUniqueOrThrow({
       where: { id: sellerId },
+    });
+    send(res).ok({ seller });
+  })
+);
+
+sellersRoute.get(
+  "/?name=:name",
+  catchErrors(async (req, res) => {
+    const { name: sellerName } = nameParamsSchema.parse(req.params);
+    console.log(`Searching for seller with name: ${sellerName}`); // Add logging
+    const seller = await prisma.seller.findMany({
+      where: {
+        name: {
+          contains: sellerName,
+        },
+      },
     });
     send(res).ok({ seller });
   })

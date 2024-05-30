@@ -6,16 +6,16 @@ async function main() {
 
   try {
     const clients = [
-      { email: "john.smith@gmail.com", name: "John Smith" },
-      { email: "emily.jones@gmail.com", name: "Emily Jones" },
-      { email: "michael.davis@gmail.com", name: "Michael Davis" },
-      { email: "sarah.wilson@gmail.com", name: "Sarah Wilson" },
-      { email: "david.brown@gmail.com", name: "David Brown" },
-      { email: "jessica.miller@gmail.com", name: "Jessica Miller" },
-      { email: "william.taylor@gmail.com", name: "William Taylor" },
-      { email: "olivia.jackson@gmail.com", name: "Olivia Jackson" },
-      { email: "james.thomas@gmail.com", name: "James Thomas" },
-      { email: "emma.white@gmail.com", name: "Emma White" },
+      { email: "john.smith@gmail.com", name: "John_Smith" },
+      { email: "emily.jones@gmail.com", name: "Emily_Jones" },
+      { email: "michael.davis@gmail.com", name: "Michael_Davis" },
+      { email: "sarah.wilson@gmail.com", name: "Sarah_Wilson" },
+      { email: "david.brown@gmail.com", name: "David_Brown" },
+      { email: "jessica.miller@gmail.com", name: "Jessica_Miller" },
+      { email: "william.taylor@gmail.com", name: "William_Taylor" },
+      { email: "olivia.jackson@gmail.com", name: "Olivia_Jackson" },
+      { email: "james.thomas@gmail.com", name: "James_Thomas" },
+      { email: "emma.white@gmail.com", name: "Emma_White" },
     ];
 
     for (const clientData of clients) {
