@@ -21,6 +21,10 @@ clientsRouter.get(
     const totalclients = await prisma.client.count();
     const clients = await prisma.client.findMany({
       orderBy: { id: "asc" },
+      select: {
+        name: true,
+        email: true,
+      },
     });
     send(res).ok({
       msg: `Total clients: ${totalclients}`,
@@ -33,10 +37,14 @@ clientsRouter.get(
   "/?id=:id",
   catchErrors(async (req, res) => {
     const { id: clientId } = idParamsSchema.parse(req.params);
-    const client = await prisma.client.findUniqueOrThrow({
-      where: { id: clientId },
-    });
-    send(res).ok({ client });
+    if (clientId !== undefined) {
+      const client = await prisma.client.findUniqueOrThrow({
+        where: { id: clientId },
+      });
+      send(res).ok({ client });
+    } else {
+      return send(res).notFound();
+    }
   })
 );
 
@@ -44,14 +52,19 @@ clientsRouter.get(
   "/?name=:name",
   catchErrors(async (req, res) => {
     const { name: clientName } = nameParamsSchema.parse(req.params);
-    const client = await prisma.client.findMany({
-      where: {
-        name: {
-          contains: clientName,
+    if (clientName !== undefined) {
+      const client = await prisma.client.findMany({
+        where: {
+          name: {
+            contains: clientName,
+          },
         },
-      },
-    });
-    send(res).ok({ client });
+        orderBy: { name: "asc" },
+      });
+      send(res).ok({ client });
+    } else {
+      return send(res).notFound();
+    }
   })
 );
 
@@ -108,4 +121,3 @@ clientsRouter.delete(
 );
 
 export default clientsRouter;
-

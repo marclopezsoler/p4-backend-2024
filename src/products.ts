@@ -6,6 +6,7 @@ import { send } from "./response";
 
 const productsRouter = Router();
 const idParamsSchema = z.object({ id: z.coerce.number() });
+const nameParamsSchema = z.object({ name: z.coerce.string() });
 
 const productsBodySchema = z.object({
   name: z.string().min(3).max(50),
@@ -22,7 +23,7 @@ productsRouter.get(
   catchErrors(async (req, res) => {
     const totalProducts = await prisma.product.count();
     const products = await prisma.product.findMany({
-      orderBy: { id: "asc" },
+      orderBy: { name: "asc" },
     });
     send(res).ok({
       msg: `Total products: ${totalProducts}`,
@@ -32,13 +33,37 @@ productsRouter.get(
 );
 
 productsRouter.get(
-  "/:id",
+  "/?id=:id",
   catchErrors(async (req, res) => {
     const { id: productId } = idParamsSchema.parse(req.params);
-    const product = await prisma.product.findUniqueOrThrow({
-      where: { id: productId },
-    });
-    send(res).ok({ product });
+    if (productId !== undefined) {
+      const product = await prisma.product.findUniqueOrThrow({
+        where: { id: productId },
+      });
+      send(res).ok({ product });
+    } else {
+      return send(res).notFound();
+    }
+  })
+);
+
+productsRouter.get(
+  "/?name=:name",
+  catchErrors(async (req, res) => {
+    const { name: productName } = nameParamsSchema.parse(req.params);
+    if (productName !== undefined) {
+      const product = await prisma.product.findMany({
+        where: {
+          name: {
+            contains: productName,
+          },
+        },
+        orderBy: { name: "asc" },
+      });
+      send(res).ok({ product });
+    } else {
+      return send(res).notFound();
+    }
   })
 );
 

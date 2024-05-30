@@ -21,6 +21,10 @@ sellersRoute.get(
     const totalSellers = await prisma.seller.count();
     const sellers = await prisma.seller.findMany({
       orderBy: { id: "asc" },
+      select: {
+        name: true,
+        email: true,
+      },
     });
     send(res).ok({
       msg: `Total sellers: ${totalSellers}`,
@@ -33,10 +37,14 @@ sellersRoute.get(
   "/?id=:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
-    const seller = await prisma.seller.findUniqueOrThrow({
-      where: { id: sellerId },
-    });
-    send(res).ok({ seller });
+    if (sellerId !== undefined) {
+      const seller = await prisma.seller.findUniqueOrThrow({
+        where: { id: sellerId },
+      });
+      send(res).ok({ seller });
+    } else {
+      return send(res).notFound();
+    }
   })
 );
 
@@ -44,15 +52,20 @@ sellersRoute.get(
   "/?name=:name",
   catchErrors(async (req, res) => {
     const { name: sellerName } = nameParamsSchema.parse(req.params);
-    console.log(`Searching for seller with name: ${sellerName}`); // Add logging
-    const seller = await prisma.seller.findMany({
-      where: {
-        name: {
-          contains: sellerName,
+    if (sellerName !== undefined) {
+      console.log(`Searching for seller with name: ${sellerName}`);
+      const seller = await prisma.seller.findMany({
+        where: {
+          name: {
+            contains: sellerName,
+          },
         },
-      },
-    });
-    send(res).ok({ seller });
+        orderBy: { name: "asc" },
+      });
+      send(res).ok({ seller });
+    } else {
+      return send(res).notFound();
+    }
   })
 );
 
