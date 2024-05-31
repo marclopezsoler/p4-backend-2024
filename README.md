@@ -26,38 +26,62 @@ The endpoints are separated by entities, here's a brief explanation of what each
 
 ### Sellers
 
-<code>/sellers/</code>: Returns a list containing all the sellers.
+GET <code>/sellers/</code>: Returns a list containing all the sellers.
 
-<code>/sellers/id=:id</code>: Returns the seller corresponding to the entered ID. 
+GET <code>/sellers/id=:id</code>: Returns the seller corresponding to the entered ID. 
 
-<code>/sellers/name=:name</code>: Returns all the sellers whose names contains the <code>name</code> entered.
+GET <code>/sellers/name=:name</code>: Returns all the sellers whose names contains the <code>name</code> entered.
+
+POST <code>/</code>: Creates a new seller with the data entered as JSON Body.
+
+PUT <code>/:id</code>: Updates a seller with the data entered as JSON Body.
+
+DELETE <code>/:id</code>: Deletes the seller corresponding to the entered ID.
 
 ### Clients
 
-<code>/clients/</code>: Returns a list containing all the clients.
+GET <code>/clients/</code>: Returns a list containing all the clients.
 
-<code>/clients/id=:id</code>: Returns the client corresponding to the entered ID. 
+GET <code>/clients/id=:id</code>: Returns the client corresponding to the entered ID. 
 
-<code>/clients/name=:name</code>: Returns all the clients whose names contains the <code>name</code> entered.
+GET <code>/clients/name=:name</code>: Returns all the clients whose names contains the <code>name</code> entered.
+
+POST <code>/</code>: Creates a new client with the data entered as JSON Body.
+
+PUT <code>/:id</code>: Updates a client with the data entered as JSON Body.
+
+DELETE <code>/:id</code>: Deletes the client corresponding to the entered ID.
 
 ### Products
 
-<code>/products/</code>: Returns a list containing all the products.
+GET <code>/products/</code>: Returns a list containing all the products.
 
-<code>/products/id=:id</code>: Returns the product corresponding to the entered ID.
+GET <code>/products/id=:id</code>: Returns the product corresponding to the entered ID.
 
-<code>/products/name=:name</code>: Returns all the products whose names contains the <code>name</code> entered.
+GET <code>/products/name=:name</code>: Returns all the products whose names contains the <code>name</code> entered.
+
+POST <code>/</code>: Creates a new product with the data entered as JSON Body.
+
+PUT <code>/:id</code>: Updates a product with the data entered as JSON Body.
+
+DELETE <code>/:id</code>: Deletes the product corresponding to the entered ID.
 
 ### Orders
 
-<code>/orders/</code>: Returns a list containing all the orders.
+GET <code>/orders/</code>: Returns a list containing all the orders.
 
-<code>/orders/id=:id</code>: Returns the order corresponding to the entered ID. 
+GET <code>/orders/id=:id</code>: Returns the order corresponding to the entered ID. 
 
-<code>/orders/seller=:id</code>: Returns the order that contains the entered sellerId. 
+GET <code>/orders/seller=:id</code>: Returns the order that contains the entered sellerId. 
 
-<code>/orders/client=:id</code>: Returns the order that contains the entered clientId. 
+GET <code>/orders/client=:id</code>: Returns the order that contains the entered clientId. 
 
-<code>/orders/product=:id</code>: Returns the order that contains the entered productId. 
+GET <code>/orders/product=:id</code>: Returns the order that contains the entered productId. 
 
-<code>/orders/status=:status</code>: Returns the order that contains the entered status. 
+GET <code>/orders/status=:status</code>: Returns the order that contains the entered status. 
+
+POST <code>/</code>: Creates a new order with the data entered as JSON Body.
+
+PUT <code>/:id</code>: Updates a order with the data entered as JSON Body.
+
+DELETE <code>/:id</code>: Deletes the order corresponding to the entered ID.
