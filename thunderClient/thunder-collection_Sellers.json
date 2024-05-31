@@ -1,0 +1,98 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Sellers",
+    "collectionId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+    "dateExported": "2024-05-31T09:53:54.654Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "27098244-881d-4bc3-bf64-f4795a1ec3a2",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "GET Sellers",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-28T22:15:29.238Z",
+            "modified": "2024-05-28T22:15:31.903Z",
+            "headers": []
+        },
+        {
+            "_id": "abc8085e-85a0-4ea4-8971-7b0611ef09b2",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "GET Seller By Id",
+            "url": "/id=4",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-28T22:16:23.218Z",
+            "modified": "2024-05-31T09:48:46.321Z",
+            "headers": []
+        },
+        {
+            "_id": "0698548d-e114-497b-9f81-a5b44867c25b",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "GET Seller By Name",
+            "url": "/name=m",
+            "method": "GET",
+            "sortNum": 45000,
+            "created": "2024-05-31T09:48:36.895Z",
+            "modified": "2024-05-31T09:48:41.945Z",
+            "headers": []
+        },
+        {
+            "_id": "5fb9361c-1efa-43e6-8223-1d0b5d87c3ab",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "POST Seller",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-28T22:16:39.611Z",
+            "modified": "2024-05-31T09:53:36.536Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"contact@hpq.com\",\n  \"name\": \"Hewlett Packard\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "1814cbe0-8501-4fc9-8bee-62fbe9268bae",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "DELETE Seller By Id",
+            "url": "/7",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-05-28T22:18:24.547Z",
+            "modified": "2024-05-28T23:00:15.826Z",
+            "headers": []
+        },
+        {
+            "_id": "03362d21-d65c-4931-a7f5-76111a49f4e5",
+            "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
+            "containerId": "",
+            "name": "UPDATE Seller By Id",
+            "url": "/6",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-05-28T22:18:45.340Z",
+            "modified": "2024-05-28T23:00:46.380Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Hewlett Packard\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:8080/sellers"
+        }
+    },
+    "ref": "F0nyr7PLm07ytBKZFmaqNg1qlHRv4D3PDNRsWES3a5LR578P3xQVphEhVXpBPCY--7rmdj75Jhz-LyjEIdde5Q"
+}

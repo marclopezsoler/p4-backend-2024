@@ -1,0 +1,98 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Products",
+    "collectionId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+    "dateExported": "2024-05-31T09:51:14.503Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c89cad97-b40c-4116-8ee6-511b3cc4c7d0",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "GET Products",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-28T18:35:00.260Z",
+            "modified": "2024-05-28T18:39:15.491Z",
+            "headers": []
+        },
+        {
+            "_id": "4e0ba3f8-fa7c-45bd-a57c-ef610f41b69f",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "GET Product By Id",
+            "url": "/id=6",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-28T18:35:14.347Z",
+            "modified": "2024-05-31T09:43:55.091Z",
+            "headers": []
+        },
+        {
+            "_id": "e571d69b-12a3-4c5a-b2bb-25a8910d29b5",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "Get Product By Name",
+            "url": "/name=m",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-31T09:43:07.221Z",
+            "modified": "2024-05-31T09:44:08.810Z",
+            "headers": []
+        },
+        {
+            "_id": "f33983b8-7423-40b7-a221-280a94936c37",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "POST Product",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-28T18:35:23.142Z",
+            "modified": "2024-05-28T19:20:50.891Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"MacBook\",\n  \"price\": 2999,\n  \"description\": \"Latest version of the MacBook air\",\n  \"color\": \"Black\",\n  \"sellerId\": 2\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "a8686fe6-14da-4064-b1ec-490d42cf2a29",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "DELETE Product By Id",
+            "url": "/6",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-28T18:45:20.280Z",
+            "modified": "2024-05-28T22:22:34.695Z",
+            "headers": []
+        },
+        {
+            "_id": "2a72a4c3-e9e0-4fa4-a2a7-781f83d47c8c",
+            "colId": "563173b2-2604-4366-b388-7c79b5bc8ac1",
+            "containerId": "",
+            "name": "UPDATE Product By Id",
+            "url": "/4",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-28T19:14:59.020Z",
+            "modified": "2024-05-28T19:48:46.056Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"iPhone 15 Pro Max\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:8080/products"
+        }
+    },
+    "ref": "akOu3QE6HgFVsUW6gn0vCQI7TeGkKt16hFJ5-dEscT9KaKlHi3Wwp50Oquc2Sim1GzO6N7tbhk0hdvHHZ3Z8vQ"
+}

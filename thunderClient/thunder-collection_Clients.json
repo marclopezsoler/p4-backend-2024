@@ -1,0 +1,98 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Clients",
+    "collectionId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+    "dateExported": "2024-05-31T09:53:50.831Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "425d9520-041a-4033-8a58-779b8da651b5",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "GET Clients",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-28T22:51:43.679Z",
+            "modified": "2024-05-28T22:51:52.836Z",
+            "headers": []
+        },
+        {
+            "_id": "219dc5fc-9031-405a-a722-cfd8232b79ec",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "GET Client By Id",
+            "url": "/id=6",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-28T22:52:03.285Z",
+            "modified": "2024-05-31T09:52:01.932Z",
+            "headers": []
+        },
+        {
+            "_id": "ba90b18e-2c45-4b9a-8ef2-f9b0e2a195b5",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "POST Client",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-28T22:52:10.728Z",
+            "modified": "2024-05-31T09:53:30.070Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Marc\",\n  \"email\": \"marc@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "878337a0-07a3-4bb5-b2d4-1bb451165eba",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "GET Client By Name",
+            "url": "/name=m",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-31T09:49:39.974Z",
+            "modified": "2024-05-31T09:52:07.674Z",
+            "headers": []
+        },
+        {
+            "_id": "8db87f23-1a1c-4767-b050-d7b595a62844",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "DELETE Client By Id",
+            "url": "/12",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-28T22:53:01.006Z",
+            "modified": "2024-05-28T23:02:34.873Z",
+            "headers": []
+        },
+        {
+            "_id": "1af514fb-2349-47f4-9429-048e97b1693d",
+            "colId": "7888f9e2-9518-41cc-8670-e2623cebc412",
+            "containerId": "",
+            "name": "UPDATE Client By Id",
+            "url": "/11",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-28T23:03:50.317Z",
+            "modified": "2024-05-28T23:04:17.211Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Marc López\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:8080/clients"
+        }
+    },
+    "ref": "NJxSosrS-svZruZeUVLZCdHx1ggh_pP-eEMNc5D6aCcXdPDc2g7vjmvcJWUL5BwppemKjV4T_29wk9a0OGzyMA"
+}

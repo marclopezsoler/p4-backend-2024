@@ -1,0 +1,134 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Orders",
+    "collectionId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+    "dateExported": "2024-05-31T09:51:20.862Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3e99b98d-ad45-47c1-a2b5-2ecf75e02afa",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Orders",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-28T19:03:56.459Z",
+            "modified": "2024-05-28T19:03:58.938Z",
+            "headers": []
+        },
+        {
+            "_id": "7cb5325b-5f84-46a6-8d9d-19831dc39abe",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Order By Id",
+            "url": "/id=3",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-28T19:04:05.449Z",
+            "modified": "2024-05-31T09:45:40.321Z",
+            "headers": []
+        },
+        {
+            "_id": "fd6c15d8-02fa-48d6-abd1-7e265ae21365",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Order By SellerId",
+            "url": "/seller=4",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-31T09:44:52.676Z",
+            "modified": "2024-05-31T09:46:52.889Z",
+            "headers": []
+        },
+        {
+            "_id": "d14a7886-e027-41d6-adba-c798c1efce42",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "POST Order",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-28T19:04:18.268Z",
+            "modified": "2024-05-28T19:27:30.846Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"clientId\": 2,\n  \"sellerId\": 2,\n  \"productId\": 6,\n  \"status\": \"Processing\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "2e0ab029-5b74-4a8e-8697-6a921f4c3ab9",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Order By ClientId",
+            "url": "/client=4",
+            "method": "GET",
+            "sortNum": 32500,
+            "created": "2024-05-31T09:46:27.567Z",
+            "modified": "2024-05-31T09:47:12.874Z",
+            "headers": []
+        },
+        {
+            "_id": "6a6749ca-1377-4656-a4a7-40458db3ce1d",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Order By ProductId",
+            "url": "/product=4",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-05-31T09:46:26.008Z",
+            "modified": "2024-05-31T09:46:58.519Z",
+            "headers": []
+        },
+        {
+            "_id": "573503ef-0ad0-42bc-89a7-197f50aba9a0",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "DELETE Order By Id",
+            "url": "/15",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-28T19:04:27.494Z",
+            "modified": "2024-05-28T23:03:35.357Z",
+            "headers": []
+        },
+        {
+            "_id": "e83d8086-488c-44e8-a570-b906320aecf3",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "GET Order By Status",
+            "url": "/status=completed",
+            "method": "GET",
+            "sortNum": 42500,
+            "created": "2024-05-31T09:47:17.991Z",
+            "modified": "2024-05-31T09:47:54.787Z",
+            "headers": []
+        },
+        {
+            "_id": "3cdb6784-0c09-4fa9-83c2-61785649c0a4",
+            "colId": "46cd1d0c-e681-4065-bbf7-6aaa92d0f06a",
+            "containerId": "",
+            "name": "UPDATE Order By Id",
+            "url": "/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-28T19:29:30.709Z",
+            "modified": "2024-05-28T19:31:56.336Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\":\"Completed\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:8080/orders"
+        }
+    },
+    "ref": "wgkXpfH1m3kmJJtqAxKWCekz2vhCNhA2vivWX9_-OSNnl_0SGvkEw8NzUYZIcwNLwuMoad8ThiQi2OU1FQRleg"
+}
