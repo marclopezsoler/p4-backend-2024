@@ -100,24 +100,10 @@ sellersRoute.delete(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: sellerId } = idParamsSchema.parse(req.params);
-    const seller = await prisma.seller;
-    const products = await prisma.product.findMany({
-      where: { sellerId },
-      select: { id: true },
+    const seller = await prisma.seller.delete({
+      where: { id: sellerId },
     });
-    if (products.length > 0) {
-      const orderIds = products.map((product) => product.id);
-      send(res).ok({
-        msg: `Seller with ID: ${sellerId} cannot be deleted. This seller has active products (${orderIds.join(
-          ", "
-        )}). Please handle them before deleting the seller.`,
-      });
-    } else {
-      const seller = await prisma.seller.delete({
-        where: { id: sellerId },
-      });
-      send(res).ok({ msg: `Seller deleted with ID: ${sellerId}` });
-    }
+    send(res).ok({ msg: `Seller deleted with ID: ${sellerId}` });
   })
 );
 

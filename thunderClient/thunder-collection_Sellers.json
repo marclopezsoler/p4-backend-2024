@@ -55,7 +55,7 @@
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"contact@hpq.com\",\n  \"name\": \"Hewlett Packard\"\n}",
+                "raw": "{\n  \"email\": \"contact@audi.com\",\n  \"name\": \"AUDI\"\n}",
                 "form": []
             }
         },
@@ -64,7 +64,7 @@
             "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
             "containerId": "",
             "name": "DELETE Seller By Id",
-            "url": "/7",
+            "url": "/1",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2024-05-28T22:18:24.547Z",
@@ -76,7 +76,7 @@
             "colId": "82b1f1e2-7db3-493d-9c89-8f7dfe9b5f24",
             "containerId": "",
             "name": "UPDATE Seller By Id",
-            "url": "/6",
+            "url": "/3",
             "method": "PUT",
             "sortNum": 70000,
             "created": "2024-05-28T22:18:45.340Z",

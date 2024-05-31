@@ -98,25 +98,10 @@ productsRouter.delete(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: productId } = idParamsSchema.parse(req.params);
-    const product = await prisma.product;
-    const orders = await prisma.order.findMany({
-      where: { productId },
-      select: { id: true },
+    const product = await prisma.product.delete({
+      where: { id: productId },
     });
-    if (orders.length > 0) {
-      const orderIds = orders.map((order) => order.id);
-      console.error(`${productId} cannot be deleted.`);
-      console.error(
-        `This product has active orders (${orderIds.join(
-          ", "
-        )}). Please handle them before deleting the product.`
-      );
-    } else {
-      const product = await prisma.product.delete({
-        where: { id: productId },
-      });
-    }
-    send(res).ok({ msg: `Product deleted with ID: ${productId}` });
+    send(res).ok({ msg: `Product deleted with ID: ${productId}.` });
   })
 );
 

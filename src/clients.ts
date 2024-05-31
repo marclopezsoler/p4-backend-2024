@@ -99,24 +99,10 @@ clientsRouter.delete(
   "/:id",
   catchErrors(async (req, res) => {
     const { id: clientId } = idParamsSchema.parse(req.params);
-    const client = await prisma.client;
-    const orders = await prisma.order.findMany({
+    const client = await prisma.client.delete({
       where: { id: clientId },
-      select: { id: true },
     });
-    if (orders.length > 0) {
-      const orderIds = orders.map((order) => order.id);
-      send(res).ok({
-        msg: `client with ID: ${clientId} cannot be deleted. This client has active orders (${orderIds.join(
-          ", "
-        )}). Please handle them before deleting the client.`,
-      });
-    } else {
-      const client = await prisma.client.delete({
-        where: { id: clientId },
-      });
-      send(res).ok({ msg: `Client deleted with ID: ${clientId}` });
-    }
+    send(res).ok({ msg: `Client deleted with ID: ${clientId}.` });
   })
 );
 

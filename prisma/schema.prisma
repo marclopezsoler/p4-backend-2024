@@ -14,8 +14,8 @@ model Product {
   price       Float
   description String
   color       String
-  seller      Seller  @relation(fields: [sellerId], references: [id])
-  sellerId    Int
+  seller      Seller?  @relation(fields: [sellerId], references: [id], onDelete: SetNull)
+  sellerId    Int?
   Order       Order[]
 }
 
@@ -39,12 +39,12 @@ model Client {
 // Orders that comes from the sale of a single product
 model Order {
   id        Int      @id @default(autoincrement())
-  client    Client   @relation(fields: [clientId], references: [id])
-  clientId  Int
-  seller    Seller   @relation(fields: [sellerId], references: [id])
-  sellerId  Int
-  product   Product  @relation(fields: [productId], references: [id])
-  productId Int
+  client    Client?   @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId  Int?
+  seller    Seller?   @relation(fields: [sellerId], references: [id], onDelete: SetNull)
+  sellerId  Int?
+  product   Product?  @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productId Int?
   status    String
   createdAt DateTime @default(now())
 }
