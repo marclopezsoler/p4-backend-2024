@@ -1,18 +1,63 @@
-# Backend en Typescript, Express y Prisma
+# P4 - Backend en Typescript, Express y Prisma | Online Store Database
 
-Se trata de hacer un _backend_ usando Typescript, Express y Prisma. El _backend_ implementado en clase es el modelo a seguir. Para alumnos que lo hacen por primera vez y sienten algo de incomodidad, lo ideal es usar el modelo de guía y hacer un _backend_ cercano al original de tal manera que la práctica sea un repaso a fondo. Para los que estén más cómodos, lo ideal es innovar en algun aspecto y salirse parcialmente del modelo en ciertos momentos o explorar algún interés personal. El modelo de datos es directamente la práctica anterior.
+That database model simulates a DB from an online store, containing 4 entities: **Seller**, **Client**, **Product** & **Order**.
 
-Al usar Prisma, es quizás buena idea explorar proveedores de Prisma que no sean precisamente Postgres, ya que el coste de hacerlo es mínimo (aunque esto no es obligatorio para nada). Aparte de los proveedores locales alternativos a Postgres, existen también opciones en la nube equivalentes a Postgres como [PlanetScale](https://www.prisma.io/docs/guides/database/planetscale), [CockroachDB](https://www.prisma.io/docs/guides/database/cockroachdb) o [Supabase](https://www.prisma.io/docs/guides/database/supabase), bien explicadas en la documentación de Prisma.
+## Step to initialize
 
-## Entregable
+- Clone the repo
+- Install all the dependencies: <code>bun install</code>
+- Create the DB: <code>bun prisma db push</code>
+- Fill the DB with seed data: <code>bun prisma db seed</code>
+- Run the server <code>bun --hot src/server.ts</code>
+- Access Prisma Studio: <code>bun prisma studio</code>
+- Run the endpoints by using Thunder Client or searching them on your browser (ex. <code>http://localhost:8080/products</code>)
 
-Como anteriormente, para hacer esta práctica hay que:
-- Hacer un _fork_ de este repositorio.
-- Trabajar en el _fork_ haciendo commits regularmente (una práctica que aparece entera en un solo commit tendrá una nota muy baja o cero, hay que mostrar todo el proceso intermedio).
-- Al finalizar, se debe crear un `ZIP` del repositorio (que incluya el fichero `.env`!) y entregarlo en el [Campus Online de UPC School](https://talent.upc.edu) (habrá una tarea preparada para ello).
 
-El entregable es el código del proyecto, incluyendo:
-- `docker-compose.yml` si la base de datos corre bajo Docker.
-- El código completo del servidor.
-- Un fichero exportado de [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) con la lista de _endpoints_ que se han probado. (Esto es **extremadamente** relevante porque la corrección del backend, de no tener este fichero, es un trabajo muchísimo más tedioso!).
-- Si se necesitan credenciales para acceder a servicios de cloud (o incluso localmente), es importante incluir en el ZIP del campus el fichero `.env` con éstas. Es muy importante no subir ese fichero en GitHub (es decir, incluirlo en `.gitignore`).
+After the seeding is done, the DB is filled with:
+- 5 sellers
+- 10 clients
+- 10 products
+- 15 orders
+
+
+## Description of the scripts
+
+The endpoints are separated by entities, here's a brief explanation of what each should return when executed via http://localhost:8080:
+
+### Sellers
+
+<code>/sellers/</code>: Returns a list containing all the sellers.
+
+<code>/sellers/id=:id</code>: Returns the seller corresponding to the entered ID. 
+
+<code>/sellers/name=:name</code>: Returns all the sellers whose names contains the <code>name</code> entered.
+
+### Clients
+
+<code>/clients/</code>: Returns a list containing all the clients.
+
+<code>/clients/id=:id</code>: Returns the client corresponding to the entered ID. 
+
+<code>/clients/name=:name</code>: Returns all the clients whose names contains the <code>name</code> entered.
+
+### Products
+
+<code>/products/</code>: Returns a list containing all the products.
+
+<code>/products/id=:id</code>: Returns the product corresponding to the entered ID.
+
+<code>/products/name=:name</code>: Returns all the products whose names contains the <code>name</code> entered.
+
+### Orders
+
+<code>/orders/</code>: Returns a list containing all the orders.
+
+<code>/orders/id=:id</code>: Returns the order corresponding to the entered ID. 
+
+<code>/orders/seller=:id</code>: Returns the order that contains the entered sellerId. 
+
+<code>/orders/client=:id</code>: Returns the order that contains the entered clientId. 
+
+<code>/orders/product=:id</code>: Returns the order that contains the entered productId. 
+
+<code>/orders/status=:status</code>: Returns the order that contains the entered status. 
