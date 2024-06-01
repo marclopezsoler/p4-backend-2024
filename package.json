@@ -5,7 +5,9 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "bun --hot src/server.ts",
-    "start": "NODE_ENV=production bun src/server.ts"
+    "start": "NODE_ENV=production bun src/server.ts",
+    "build": "tsc",
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
     "@types/bun": "latest"
